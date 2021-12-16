@@ -6,6 +6,12 @@ let computerChoice = Math.floor(Math.random() * 3);
 let playerChoice;
 let display = document.querySelector('.display');
 
+function restart() {
+    setTimeout(function() {
+        window.location.reload();
+    }, 2000);
+}
+
 if(computerChoice == 0) {
     computerChoice = items[computerChoice];
 }
@@ -28,6 +34,8 @@ rock.addEventListener('click', function() {
     else {
         display.innerHTML = `You won! <br> Computer chose ${computerChoice}`;
     }
+
+    restart();
 });
 
 paper.addEventListener('click', function() {
@@ -42,6 +50,8 @@ paper.addEventListener('click', function() {
     else {
         display.innerHTML = `Computer won! <br> Computer chose ${computerChoice}`;
     }
+
+    restart();
 });
 
 scissors.addEventListener('click', function() {
@@ -56,4 +66,6 @@ scissors.addEventListener('click', function() {
     else {
         display.innerHTML = `Tie! <br> Computer chose ${computerChoice}`;
     }
+
+    restart();
 });
